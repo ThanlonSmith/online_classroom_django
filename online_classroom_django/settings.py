@@ -10,10 +10,13 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
-import os
+import os  # 代表操作系统
+import sys  # 代表Python环境
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# 将我们自己定的包加入到Python搜索环境变量中
+sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))  # sys.path是列表
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -36,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
+    'courses.apps.CoursesConfig',
+    'courses.apps.CoursesConfig',
+    'orgs.apps.OrgsConfig',
+    'operations.apps.OperationsConfig',
 ]
 
 MIDDLEWARE = [
